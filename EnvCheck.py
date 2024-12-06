@@ -7,18 +7,20 @@ parser.add_argument('--Dev', action='store_true', help='Is the CWD a virtual env
 parser.add_argument('--DumpVars', action='store_true', help='Dump all the Environment Vars')
 args = parser.parse_args()
 
+print("")
+
 if args.Dev:
     if sys.prefix != sys.base_prefix:
-       print("Virtual environment detected at CWD ")
+       print("Venv: Virtual environment detected at CWD ")
     else:
-       print("NO venv at CWD")
+       print("Venv: NO venv at CWD")
     
     def git_exist(path):
         return os.path.exists(os.path.join(path, ".git"))
     if git_exist("."):
-        print(".git exists at CWD")
+        print("Git: .git exists at CWD")
     else:
-        print("NO .git exists at CWD")
+        print("Git: NOT found at CWD")
 
     def shell_name():
         shell = os.environ.get('SHELL', None)
