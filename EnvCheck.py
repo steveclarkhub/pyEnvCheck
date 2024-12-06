@@ -20,6 +20,15 @@ if args.Dev:
     else:
         print("NO .git exists at CWD")
 
+    def shell_name():
+        shell = os.environ.get('SHELL', None)
+        if shell:
+            return shell.split('/')[-1]
+        else:
+            return "unknown"
+    shell = shell_name()
+    print(shell)
+
 if args.DumpVars:
    def print_env_vars():
        """Prints environment variables in a tabular format."""
