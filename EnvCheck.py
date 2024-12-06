@@ -23,9 +23,9 @@ if args.Dev:
     def shell_name():
         shell = os.environ.get('SHELL', None)
         if shell:
-            return shell.split('/')[-1]
+            return f"Shell: {shell.split('/')[-1]}"
         else:
-            return "unknown"
+            return "Shell can't be ID'd"
     shell = shell_name()
     print(shell)
 
