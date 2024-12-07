@@ -2,7 +2,7 @@ import argparse
 import os
 import sys
 
-parser = argparse.ArgumentParser(description="Process hostname and port.")
+parser = argparse.ArgumentParser(description="Info about the CWD prior to getting started.")
 parser.add_argument('--Dev', action='store_true', help='Is the CWD a virtual env?')
 parser.add_argument('--DumpVars', action='store_true', help='Dump all the Environment Vars')
 args = parser.parse_args()
